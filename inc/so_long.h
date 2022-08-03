@@ -6,13 +6,14 @@
 /*   By: moninechan <moninechan@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/03 09:10:20 by moninechan       ###   ########.fr       */
+/*   Updated: 2022/08/03 13:01:46 by moninechan       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "../minilibx_opengl_20191021/mlx.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct	s_data {
 	void	*img;
