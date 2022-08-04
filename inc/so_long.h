@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/04 21:08:54 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/04 23:54:33 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,5 @@
 typedef struct	s_prgm {
 	void	*mlx;
 	void	*win;
+	void	*fd;
 }				t_prgm;
