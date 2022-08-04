@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:14:21 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/03 17:15:53 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/03 17:33:58 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	main()
 	width = 16;
 	height = 16;
 	prgm.mlx = mlx_init();
-	prgm.win = mlx_new_window(prgm.mlx, 640, 480, "so long");
+	prgm.win = mlx_new_window(prgm.mlx, 640, 480, "so_long");
 	img = mlx_xpm_file_to_image(prgm.mlx, path_floor_tile, &width, &height);
 	floor_tile = mlx_put_image_to_window(prgm.mlx, prgm.win, img, 0, 0);
 	mlx_key_hook(prgm.win, key_hook, &prgm);
@@ -57,4 +57,3 @@ int	main()
 	mlx_loop(prgm.mlx);
 	return (0);
 }
-
