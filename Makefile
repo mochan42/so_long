@@ -3,8 +3,8 @@
 
 NAME				:= so_long
 
-CC					:= gcc
-CFLAGS				:= -Wall -Wextra -Werror
+CC					:= clang
+CFLAGS				:= -Wall -Wextra -Werror -g
 RM					:= rm -rf
 INCS				:= -I ./inc/
 HEADER				:= ./inc/so_long.h
@@ -32,7 +32,7 @@ END_COLOR			:= \033[0;39m
 # **************************************************************************** #
 # SOURCES
 
-SRC_FILES			:= so_long.c
+SRC_FILES			:= so_long.c window.c hooks.c
 
 OBJ_FILES			:= ${SRC_FILES:.c=.o}
 SRC					:= $(addprefix $(SRC_DIR), $(SRC_FILES))
