@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:14:21 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/06 00:33:50 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/06 16:11:51 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,21 @@
 
 int	main(int ac, char **av)
 {	
-	t_prgm	game;
-	int		height;
-	int		width;
-	int		nb_col;
-	int		nb_row;
-	char	*map_path;
+	t_prgm	gme;
 
-	if (ac == 2)
+	if (ac != 2)
 	{
-		map_path = av[1];
-		width = 64;
-		height = 64;
-		nb_col = count_nb_col(map_path);
-		nb_row = count_nb_row(map_path);
-		game.mlx = mlx_init();
-		game.win = mlx_new_window(game.mlx, nb_col * width, nb_row * width, "so_long");
-		display_map_window(&game, map_path);
-		mlx_key_hook(game.win, key_hook, &game);
-		mlx_hook(game.win, 17, 0, ft_close_window, &game);
-		mlx_loop(game.mlx);
+		ft_printf("Error : number of arguments should be 1.\n");
+		return (0);
 	}
-	else
-		ft_printf("One and only one argument string is required.\n");
+	gme.map_path = av[1];
+	gme.col = count_nb_col(gme.map_path);
+	gme.row = count_nb_row(gme.map_path);
+	gme.mlx = mlx_init();
+	gme.win = mlx_new_window(gme.mlx, gme.col * 64, gme.row * 64, "so_long");
+	display_map_window(&gme);
+	mlx_key_hook(gme.win, key_hook, &gme);
+	mlx_hook(gme.win, 17, 0, ft_close_window, &gme);
+	mlx_loop(gme.mlx);
 	return (0);
 }

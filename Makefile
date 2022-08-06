@@ -50,11 +50,19 @@ $(NAME): $(OBJ)
 	make -C $(FT_PRINTF_DIR)
 	# echo "make $(GET_NEXT_LINE_DIR)"
 	make -C $(GET_NEXT_LINE_DIR)
-	$(CC) $(OBJ) $(MLX_A) $(FT_PRINTF_A) $(GET_NEXT_LINE_A) -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) $(MLX_A) $(FT_PRINTF_A) $(GET_NEXT_LINE_A) -framework OpenGL -framework AppKit -o $(NAME)
 	echo "$(GREEN)$(NAME) compiled :)$(END_COLOR)"
+# -C	:	make option that tells make to change directory before execution.
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c
-	$(CC) $(CFLAGS) $(INCS) -c $< -o $@ 
+	$(CC) $(CFLAGS)  -c $< -o $@ $(INCS)
+# -c	:	gcc option to compile each .c file into .o file.
+# $<	:	represents the first prerequisite of the rule (each .c file 
+#			contained in the src folder).
+# -o	:	gcc option to define the name of the program (output) file :
+#			"push_swap".
+# $@	:	represents the filename of the target of the rule, i.e. each output
+#			file which will be linked with the push_swap.h header file.
 
 $(OBJ_DIR):
 	mkdir $(OBJ_DIR)
@@ -72,6 +80,7 @@ fclean: clean
 	make fclean -C $(GET_NEXT_LINE_DIR)
 
 re: fclean all
-	echo "$(GREEN) Cleaned all and rebuild $(NAME)!"
+	echo "$(GREEN) Cleaned all and rebuild $(NAME),$(MLX_DIR) , $(FT_PRINTF_DIR) and $(GET_NEXT_LINE_DIR)!$(END_COLOR)!"
 
 .PHONY:		all clean fclean re
+

@@ -6,34 +6,33 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 21:53:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/06 00:30:15 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/06 16:41:28 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
-char	**store_map(char *map_path, int nb_row)
+char	**store_map(t_prgm vars)
 {
-	char	**map;
 	int		fd;
 	char	*line;
 	int		row_index;
 
-	map = malloc(sizeof(char *) * (nb_row));
+	vars.map = malloc(sizeof(char *) * (vars.row));
 	row_index = 1;
-	if (!map)
+	if (!vars.map)
 		return (0);
-	fd = open(map_path, O_RDONLY);
+	fd = open(vars.map_path, O_RDONLY);
 	line = get_next_line(fd);
-	map[0] = line;
+	vars.map[0] = line;
 	while (line != NULL)
 	{
 		line = get_next_line(fd);
-		map[row_index] = line;
+		vars.map[row_index] = line;
 		row_index++;
 	}
 	close(fd);
-	return (map);
+	return (vars.map);
 }
 
 char	*choose_tile_path(char c)
@@ -54,46 +53,48 @@ char	*choose_tile_path(char c)
 	return (tile_path);
 }
 
-void	put_map_to_window(t_prgm *vars, char **map, int nb_col, int nb_row)
+// The variable for t_prgm is named "vr" which is a shortname for "vars".
+// This is done due to norminette constrains (line < 80 characters).
+void	put_map_to_window(t_prgm *vr)
 {
 	int		j;
 	int		i;
-	char	*tile_path;
-	void	*img;
+	char	*path;
 	int		x;
 	int		y;
-	int		height;
-	int		width;
 
-	height = 64;
-	width = 64;
 	j = 0;
 	y = 0;
-	while (j < nb_row)
+	while (j < vr->row)
 	{
 		i = 0;
 		x = 0;
-		while (i < nb_col)
+		while (i < vr->col)
 		{
-			tile_path = choose_tile_path(map[j][i]);
-			img = mlx_xpm_file_to_image(vars->mlx, tile_path, &width, &height);
-			mlx_put_image_to_window(vars->mlx, vars->win, img, x, y);
-			x = x + width;
+			path = choose_tile_path(vr->map[j][i]);
+			vr->img = mlx_xpm_file_to_image(vr->mlx, path, vr->wid, vr->hei);
+			mlx_put_image_to_window(vr->mlx, vr->win, vr->img, x, y);
+			x = x + *vr->wid;
 			i++;
 		}
 		j++;
-		y = y + height;
+		y = y + *vr->hei;
 	}
 }
 
-void	display_map_window(t_prgm *vars, char *map_path)
+// Added the initialization for height and width of each tile in the function 
+// display_map_window because of norminette constrains (each function must have
+// less than 25 lines) These initializations originally took place in the
+// function put map to window.
+void	display_map_window(t_prgm *vars)
 {
-	int		nb_col;
-	int		nb_row;
-	char	**map;
+	int	height;
+	int	width;
 
-	nb_col = count_nb_col(map_path);
-	nb_row = count_nb_row(map_path);
-	map = store_map(map_path, nb_row);
-	put_map_to_window(vars, map, nb_col, nb_row);
+	height = 64;
+	width = 64;
+	vars->hei = &height;
+	vars->wid = &width;
+	vars->map = store_map(*vars);
+	put_map_to_window(vars);
 }
