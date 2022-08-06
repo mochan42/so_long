@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/06 18:09:20 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/06 18:45:12 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,6 @@ typedef struct s_prgm {
 int		key_hook(int keycode, t_prgm *vars);
 
 /* map.c */
-char	*choose_tile_path(char c);
-void	display_map_window(t_prgm *vars);
-void	put_map_to_window(t_prgm *vars);
 char	**store_map(t_prgm vars);
 
 /* so_long.c */
@@ -61,5 +58,8 @@ void	free_all(t_prgm *vars);
 
 /* window.c */
 int		ft_close_window(t_prgm *vars);
+char	*choose_tile_path(char c);
+void	display_map_window(t_prgm *vars);
+void	put_map_to_window(t_prgm *vars);
 
 #endif

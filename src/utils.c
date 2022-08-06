@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 23:30:23 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/06 18:16:42 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/06 18:45:43 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,9 @@ int	count_nb_row(char *map_path)
 void	free_all(t_prgm *vars)
 {
 	int	i;
-	
+
 	i = 0;
-	free(vars->img);
-	while(vars->map[i])
+	while (vars->map[i])
 	{
 		free(vars->map[i]);
 		i++;
