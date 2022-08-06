@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/06 16:37:30 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/06 18:09:20 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include "../minilibx_opengl_20191021/mlx.h"
 # include "../ft_printf/ft_printf.h"
 # include "../get_next_line/get_next_line.h"
+
 
 /* ########################################################################## */
 /* STRUCTURES */
@@ -56,7 +57,7 @@ char	*dupe_str(char *s, int len_str);
 /* utils.c */
 int		count_nb_col(char *map_path);
 int		count_nb_row(char *map_path);
-void	init_prgm(t_prgm vars, char *s);
+void	free_all(t_prgm *vars);
 
 /* window.c */
 int		ft_close_window(t_prgm *vars);

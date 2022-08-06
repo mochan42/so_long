@@ -7,7 +7,7 @@ CC					:= gcc
 CFLAGS				:= -Wall -Wextra -Werror
 RM					:= rm -rf
 INCS				:= -I
-HEADER				:= so_long.h
+HEADER				:= get_next_line.h
 
 # **************************************************************************** #
 # COLORS
