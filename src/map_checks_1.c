@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_checks_1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moninechan <moninechan@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 21:53:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/07 12:59:53 by moninechan       ###   ########.fr       */
+/*   Updated: 2022/08/07 16:15:24 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 void	check_exit(t_prgm *vars)
 {
 	int	i;
-	int j;
-	
+	int	j;
+
 	j = 0;
-	while(j < vars->row)
+	while (j < vars->row)
 	{
 		i = 0;
-		while( i < vars->col)
+		while (i < vars->col)
 		{
-			if(vars->map[j][i] == 'E')
+			if (vars->map[j][i] == 'E')
 				vars->exit_nb++;
-			i++;	
+			i++;
 		}
 		j++;
 	}
-	if(vars->exit_nb < 1)
+	if (vars->exit_nb < 1)
 	{
 		ft_printf("Map error : no exit was found.\n");
 		exit (0);
@@ -39,21 +39,21 @@ void	check_exit(t_prgm *vars)
 void	check_player(t_prgm *vars)
 {
 	int	i;
-	int j;
-	
+	int	j;
+
 	j = 0;
-	while(j < vars->row)
+	while (j < vars->row)
 	{
 		i = 0;
-		while( i < vars->col)
+		while (i < vars->col)
 		{
-			if(vars->map[j][i] == 'P')
+			if (vars->map[j][i] == 'P')
 				vars->player_nb++;
-			i++;	
+			i++;
 		}
 		j++;
 	}
-	if(vars->player_nb < 1)
+	if (vars->player_nb < 1)
 	{
 		ft_printf("Map error : no player was found.\n");
 		exit (0);
@@ -63,21 +63,21 @@ void	check_player(t_prgm *vars)
 void	check_collectible(t_prgm *vars)
 {
 	int	i;
-	int j;
-	
+	int	j;
+
 	j = 0;
-	while(j < vars->row)
+	while (j < vars->row)
 	{
 		i = 0;
-		while( i < vars->col)
+		while (i < vars->col)
 		{
-			if(vars->map[j][i] == 'C')
+			if (vars->map[j][i] == 'C')
 				vars->collect_nb++;
-			i++;	
+			i++;
 		}
 		j++;
 	}
-	if(vars->collect_nb < 1)
+	if (vars->collect_nb < 1)
 	{
 		ft_printf("Map error : no collectible was found.\n");
 		exit (0);
@@ -86,7 +86,26 @@ void	check_collectible(t_prgm *vars)
 
 void	check_valid_char(t_prgm *vars)
 {
-	
+	int	i;
+	int	j;
+
+	j = 0;
+	while (j < vars->row)
+	{
+		i = 0;
+		while (i < vars->col)
+		{
+			if (!ft_strchr_sl("10CEP", vars->map[j][i]))
+				vars->invalid_char++;
+			i++;
+		}
+		j++;
+	}
+	if (vars->invalid_char > 0)
+	{
+		ft_printf("Map error : only authorized characters : 1, 0, C, E, P.\n");
+		exit (0);
+	}
 }
 
 void	check_map(t_prgm *vars)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moninechan <moninechan@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/07 12:58:06 by moninechan       ###   ########.fr       */
+/*   Updated: 2022/08/07 16:01:00 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_prgm {
 	int		exit_nb;
 	int		player_nb;
 	int		collect_nb;
+	int		invalid_char;
 }				t_prgm;
 
 /* ########################################################################## */
@@ -52,6 +53,7 @@ int		key_hook(int keycode, t_prgm *vars);
 char	**store_map(t_prgm vars);
 
 /* map_checks_1.c */
+void	check_valid_char(t_prgm *vars);
 void	check_collectible(t_prgm *vars);
 void	check_exit(t_prgm *vars);
 void	check_map(t_prgm *vars);
@@ -64,6 +66,7 @@ char	*dupe_str(char *s, int len_str);
 int		count_nb_col(char *map_path);
 int		count_nb_row(char *map_path);
 void	free_all(t_prgm *vars);
+int		ft_strchr_sl(char *s, char c);
 
 /* window.c */
 int		ft_close_window(t_prgm *vars);

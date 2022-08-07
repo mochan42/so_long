@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moninechan <moninechan@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:14:21 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/07 12:34:57 by moninechan       ###   ########.fr       */
+/*   Updated: 2022/08/07 15:50:26 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	init_game(t_prgm *vr, char *s)
 	vr->exit_nb = 0;
 	vr->player_nb = 0;
 	vr->collect_nb = 0;
+	vr->invalid_char = 0;
 }
 
 int	main(int ac, char **av)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moninechan <moninechan@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 23:30:23 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/07 12:29:14 by moninechan       ###   ########.fr       */
+/*   Updated: 2022/08/07 16:15:39 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,14 @@ void	free_all(t_prgm *vars)
 		free(vars->map[i]);
 		i++;
 	}
+}
+
+int	ft_strchr_sl(char *s, char c)
+{
+	while (*s != '\0' && *s != c)
+		s++;
+	if (*s == c)
+		return (1);
+	else
+		return (0);
 }
