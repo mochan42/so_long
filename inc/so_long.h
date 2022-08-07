@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moninechan <moninechan@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/06 18:45:12 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/07 12:58:06 by moninechan       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ typedef struct s_prgm {
 	int		*wid;
 	int		*hei;
 	void	*img;
+	int		exit_nb;
+	int		player_nb;
+	int		collect_nb;
 }				t_prgm;
 
 /* ########################################################################## */
@@ -47,6 +50,12 @@ int		key_hook(int keycode, t_prgm *vars);
 
 /* map.c */
 char	**store_map(t_prgm vars);
+
+/* map_checks_1.c */
+void	check_collectible(t_prgm *vars);
+void	check_exit(t_prgm *vars);
+void	check_map(t_prgm *vars);
+void	check_player(t_prgm *vars);
 
 /* so_long.c */
 char	*dupe_str(char *s, int len_str);

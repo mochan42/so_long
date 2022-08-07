@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   window.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: moninechan <moninechan@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 11:16:05 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/06 18:46:09 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/07 12:12:18 by moninechan       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	put_map_to_window(t_prgm *vr)
 	char	*path;
 	int		x;
 	int		y;
-
+	
 	j = 0;
 	y = 0;
 	while (j < vr->row)
@@ -82,6 +82,5 @@ void	display_map_window(t_prgm *vars)
 	width = 64;
 	vars->hei = &height;
 	vars->wid = &width;
-	vars->map = store_map(*vars);
 	put_map_to_window(vars);
 }
