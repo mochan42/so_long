@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 16:18:41 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/07 18:37:42 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/07 18:53:47 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	check_ns_wall(t_prgm *vars)
 		i++;
 	}
 	i = 0;
-	while (vars->map[last_row_idx][i] != '\0')
+	while (vars->map[last_row_idx][i] != '\0' && vars->map[0][i] != '\n')
 	{
 		if (vars->map[last_row_idx][i] != '1')
 		{

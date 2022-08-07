@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 21:53:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/07 18:03:14 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/07 18:46:41 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	check_exit(t_prgm *vars)
 	}
 	if (vars->exit_nb < 1)
 	{
-		ft_printf("Map error : no exit was found.\n");
+		ft_printf("Map error : no exit was found (min : 1).\n");
 		exit (0);
 	}
 }
@@ -53,9 +53,9 @@ void	check_player(t_prgm *vars)
 		}
 		j++;
 	}
-	if (vars->player_nb < 1)
+	if (vars->player_nb != 1)
 	{
-		ft_printf("Map error : no player was found.\n");
+		ft_printf("Map error : no player or more than 1 player.\n");
 		exit (0);
 	}
 }
@@ -79,7 +79,7 @@ void	check_collectible(t_prgm *vars)
 	}
 	if (vars->collect_nb < 1)
 	{
-		ft_printf("Map error : no collectible was found.\n");
+		ft_printf("Map error : no collectible was found (min : 1).\n");
 		exit (0);
 	}
 }
