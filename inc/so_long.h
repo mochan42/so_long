@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/07 16:01:00 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/07 17:50:32 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,11 @@ void	check_exit(t_prgm *vars);
 void	check_map(t_prgm *vars);
 void	check_player(t_prgm *vars);
 
+/* map_checks_2.c */
+void	check_rectangle(t_prgm *vars);
+void	check_ns_wall(t_prgm *vars);
+void	check_ew_wall(t_prgm *vars);
+
 /* so_long.c */
 char	*dupe_str(char *s, int len_str);
 
@@ -67,6 +72,7 @@ int		count_nb_col(char *map_path);
 int		count_nb_row(char *map_path);
 void	free_all(t_prgm *vars);
 int		ft_strchr_sl(char *s, char c);
+int		ft_strlen_sl(char *s);
 
 /* window.c */
 int		ft_close_window(t_prgm *vars);
