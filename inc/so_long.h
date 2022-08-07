@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/07 17:50:32 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/07 18:03:44 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	check_player(t_prgm *vars);
 void	check_rectangle(t_prgm *vars);
 void	check_ns_wall(t_prgm *vars);
 void	check_ew_wall(t_prgm *vars);
+void	check_map_file_extension(t_prgm *vars);
 
 /* so_long.c */
 char	*dupe_str(char *s, int len_str);

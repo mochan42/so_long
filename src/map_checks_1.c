@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 21:53:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/07 17:50:45 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/07 18:03:14 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,4 +118,5 @@ void	check_map(t_prgm *vars)
 	check_collectible(vars);
 	check_ns_wall(vars);
 	check_ew_wall(vars);
+	check_map_file_extension(vars);
 }
