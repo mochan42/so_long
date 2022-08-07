@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 11:16:05 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/07 18:50:55 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/07 19:28:47 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ char	*choose_tile_path(char c)
 	else if (c == '0')
 		tile_path = "./images/xpm/floor_tile_64x64.xpm";
 	else if (c == 'P')
-		tile_path = "./images/xpm/player_tile_64x64.xpm";
+		tile_path = "./images/xpm/player_v2_tile_64x64.xpm";
 	else if (c == 'E')
-		tile_path = "./images/xpm/exit_tile_64x64.xpm";
+		tile_path = "./images/xpm/exit_v2_tile_64x64.xpm";
 	else if (c == 'C')
-		tile_path = "./images/xpm/collectible_tile_64x64.xpm";
+		tile_path = "./images/xpm/collectible_v2_tile_64x64.xpm";
 	return (tile_path);
 }
 
