@@ -63,7 +63,7 @@ $(OBJ_DIR)%.o : $(SRC_DIR)%.c
 # -o	:	gcc option to define the name of the program (output) file :
 #			"push_swap".
 # $@	:	represents the filename of the target of the rule, i.e. each output
-#			file which will be linked with the push_swap.h header file.
+#			file which will be linked with the so_long.h header file.
 
 $(OBJ_DIR):
 	mkdir $(OBJ_DIR)
