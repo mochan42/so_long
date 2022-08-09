@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/09 23:36:52 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/10 01:10:48 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # include "../minilibx_opengl_20191021/mlx.h"
 # include "../ft_printf/ft_printf.h"
 # include "../get_next_line/get_next_line.h"
-
 
 /* ########################################################################## */
 /* STRUCTURES */
@@ -41,7 +40,20 @@ typedef struct s_prgm {
 	int		player_nb;
 	int		collect_nb;
 	int		invalid_char;
+	int		pl_xm;
+	int		pl_ym;
+	int		pl_xw;
+	int		pl_yw;
 }				t_prgm;
+
+/* ########################################################################## */
+/* CONSTANTS */
+
+# define KEY_ESC 53
+# define KEY_W 13
+# define KEY_A 0
+# define KEY_S 1
+# define KEY_D 2
 
 /* ########################################################################## */
 /* FUNCTIONS */
@@ -64,6 +76,12 @@ void	check_rectangle(t_prgm *vars);
 void	check_ns_wall(t_prgm *vars);
 void	check_ew_wall(t_prgm *vars);
 void	check_map_file_extension(t_prgm *vars);
+
+/* moves.c */
+void	move_down(t_prgm *vr);
+void	move_left(t_prgm *vr);
+void	move_right(t_prgm *vr);
+void	move_up(t_prgm *vr);
 
 /* so_long.c */
 char	*dupe_str(char *s, int len_str);

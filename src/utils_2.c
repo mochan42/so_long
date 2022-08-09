@@ -6,11 +6,11 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 17:10:21 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/09 17:13:33 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/10 00:00:23 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/so_long.h"
+#include "../inc/so_long.h"
 
 void	free_map(t_prgm *vars)
 {
