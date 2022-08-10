@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/10 20:53:48 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/10 22:51:48 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,11 @@ void	check_map(t_prgm *vars);
 void	check_player(t_prgm *vars);
 
 /* map_checks_2.c */
-void	check_rectangle(t_prgm *vars);
-void	check_ns_wall(t_prgm *vars);
+void	check_empty_map(t_prgm *vars);
 void	check_ew_wall(t_prgm *vars);
 void	check_map_file_extension(t_prgm *vars);
+void	check_ns_wall(t_prgm *vars);
+void	check_rectangle(t_prgm *vars);
 
 /* moves_1.c */
 void	move_down(t_prgm *vr);
