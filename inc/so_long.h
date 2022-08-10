@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/10 15:19:35 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/10 20:18:25 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ void	put_move_down_to_window(t_prgm *vr);
 void	put_move_left_to_window(t_prgm *vr);
 void	put_move_right_to_window(t_prgm *vr);
 void	put_move_up_to_window(t_prgm *vr);
+void	put_black_patch_to_window(t_prgm *vr);
 
 /* so_long.c */
 char	*dupe_str(char *s, int len_str);
