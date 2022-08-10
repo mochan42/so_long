@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:14:21 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/10 15:27:47 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/10 21:03:38 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,16 @@ void	init_player_pos(t_prgm *vars)
 	}
 	vars->pxw = vars->pxm * 64;
 	vars->pyw = vars->pym * 64;
+}
+
+void	init_moves_display(t_prgm *vr)
+{
+	char	*str;
+
+	str = i2a(vr->steps);
+	mlx_string_put(vr->mlx, vr->win, vr->mxw, vr->myw, vr->w, "MOVES : ");
+	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->w, str);
+	free(str);
 }
 
 int	main(int ac, char **av)

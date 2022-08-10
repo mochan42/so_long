@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/10 20:18:25 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/10 20:53:48 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,7 @@ int		get_len(int n);
 int		ft_close_window(t_prgm *vars);
 char	*choose_tile_path(char c);
 void	display_map_window(t_prgm *vars);
+void	init_moves_display(t_prgm *vr);
 void	put_map_to_window(t_prgm *vars);
 
 #endif
