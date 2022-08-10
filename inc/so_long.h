@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/10 12:24:00 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/10 14:12:06 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ typedef struct s_prgm {
 	int		player_nb;
 	int		collect_nb;
 	int		invalid_char;
-	int		pl_xm;
-	int		pl_ym;
-	int		pl_xw;
-	int		pl_yw;
+	int		pxm;
+	int		pym;
+	int		pxw;
+	int		pyw;
 	int		steps;
 }				t_prgm;
 
@@ -78,11 +78,17 @@ void	check_ns_wall(t_prgm *vars);
 void	check_ew_wall(t_prgm *vars);
 void	check_map_file_extension(t_prgm *vars);
 
-/* moves.c */
+/* moves_1.c */
 void	move_down(t_prgm *vr);
 void	move_left(t_prgm *vr);
 void	move_right(t_prgm *vr);
 void	move_up(t_prgm *vr);
+
+/* moves_2.c */
+void	put_move_down_to_window(t_prgm *vr);
+void	put_move_left_to_window(t_prgm *vr);
+void	put_move_right_to_window(t_prgm *vr);
+void	put_move_up_to_window(t_prgm *vr);
 
 /* so_long.c */
 char	*dupe_str(char *s, int len_str);
