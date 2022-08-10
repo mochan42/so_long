@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:14:21 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/10 12:20:04 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/10 14:24:05 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,15 @@ void	init_player_pos(t_prgm *vars)
 		{
 			if (vars->map[j][i] == 'P')
 			{
-				vars->pl_xm = i;
-				vars->pl_ym = j;
+				vars->pxm = i;
+				vars->pym = j;
 			}
 			i++;
 		}
 		j++;
 	}
-	vars->pl_xw = vars->pl_xm * 64;
-	vars->pl_yw = vars->pl_ym * 64;
+	vars->pxw = vars->pxm * 64;
+	vars->pyw = vars->pym * 64;
 }
 
 int	main(int ac, char **av)
