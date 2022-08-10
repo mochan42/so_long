@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 23:30:23 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/09 17:10:31 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/10 23:01:15 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ int	count_nb_col(char *map_path)
 
 	fd = open(map_path, O_RDONLY);
 	line = get_next_line(fd);
+	if (!line)
+	{
+		ft_printf("Map is empty!\n");
+		exit (0);
+	}
 	nb_col = ft_strlen(line) - 1;
 	if (line)
 		free(line);

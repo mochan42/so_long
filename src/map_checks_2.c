@@ -6,11 +6,20 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 16:18:41 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/07 18:53:47 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/10 22:59:40 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
+
+void	check_empty_map(t_prgm *vars)
+{
+	if (vars->col == 0)
+	{
+		ft_printf("Map is missing some elements.\n");
+		exit (0);
+	}
+}
 
 void	check_rectangle(t_prgm *vars)
 {
@@ -21,7 +30,7 @@ void	check_rectangle(t_prgm *vars)
 	{
 		if (ft_strlen_sl(vars->map[0]) != ft_strlen_sl(vars->map[j]))
 		{
-			ft_printf("Map error : map is not rectangular.\n");
+			ft_printf("Map is not rectangular or some elements are absent.\n");
 			exit (0);
 		}
 		j++;

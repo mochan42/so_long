@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 21:53:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/07 18:46:41 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/10 22:52:37 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ void	check_valid_char(t_prgm *vars)
 void	check_map(t_prgm *vars)
 {
 	vars->map = store_map(*vars);
+	check_empty_map(vars);
 	check_rectangle(vars);
 	check_valid_char(vars);
 	check_exit(vars);
