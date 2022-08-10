@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:14:21 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/10 01:14:07 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/10 12:20:04 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	init_game(t_prgm *vr, char *s)
 	vr->player_nb = 0;
 	vr->collect_nb = 0;
 	vr->invalid_char = 0;
+	vr->steps = 0;
 }
 
 void	init_player_pos(t_prgm *vars)
