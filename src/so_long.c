@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:14:21 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/10 14:24:05 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/10 15:27:47 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,24 @@
 
 void	init_game(t_prgm *vr, char *s)
 {
+	char	*title;
+
+	title = "so_long";
 	vr->map_path = s;
 	vr->col = count_nb_col(vr->map_path);
 	vr->row = count_nb_row(vr->map_path);
 	vr->mlx = mlx_init();
-	vr->win = mlx_new_window(vr->mlx, vr->col * 64, vr->row * 64, "so_long");
+	vr->win = mlx_new_window(vr->mlx, vr->col * 64, (vr->row * 64) + 64, title);
 	vr->exit_nb = 0;
 	vr->player_nb = 0;
 	vr->collect_nb = 0;
 	vr->invalid_char = 0;
 	vr->steps = 0;
+	vr->mxw = (64 * (vr->col - 2)) / 2;
+	vr->myw = (64 * vr->row) + 32;
+	vr->mcxw = (64 * (vr->col + 1)) / 2;
+	vr->b = 0x00000000;
+	vr->w = 0x00FFFFFF;
 }
 
 void	init_player_pos(t_prgm *vars)

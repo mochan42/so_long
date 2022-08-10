@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 11:16:05 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/10 13:38:08 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/10 15:30:22 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ void	put_map_to_window(t_prgm *vr)
 		j++;
 		y = y + *vr->hei;
 	}
+	mlx_string_put(vr->mlx, vr->win, vr->mxw, vr->myw, vr->w, "MOVES : ");
+	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->w, i2a(vr->steps));
 }
 
 // Added the initialization for height and width of each tile in the function 

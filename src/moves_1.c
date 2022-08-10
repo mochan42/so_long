@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 21:20:22 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/10 14:11:09 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/10 15:29:16 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ void	move_up(t_prgm *vr)
 		ft_close_window(vr);
 	vr->pym -= 1;
 	vr->pyw -= 64;
+	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->b, i2a(vr->steps));
 	vr->steps += 1;
-	ft_printf("number of steps : %d\n", vr->steps);
+	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->w, i2a(vr->steps));
 }
 
 void	move_down(t_prgm *vr)
@@ -50,8 +51,9 @@ void	move_down(t_prgm *vr)
 		ft_close_window(vr);
 	vr->pym += 1;
 	vr->pyw += 64;
+	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->b, i2a(vr->steps));
 	vr->steps += 1;
-	ft_printf("number of steps : %d\n", vr->steps);
+	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->w, i2a(vr->steps));
 }
 
 void	move_right(t_prgm *vr)
@@ -71,8 +73,9 @@ void	move_right(t_prgm *vr)
 		ft_close_window(vr);
 	vr->pxm += 1;
 	vr->pxw += 64;
+	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->w, i2a(vr->steps));
 	vr->steps += 1;
-	ft_printf("number of steps : %d\n", vr->steps);
+	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->w, i2a(vr->steps));
 }
 
 void	move_left(t_prgm *vr)
@@ -92,6 +95,7 @@ void	move_left(t_prgm *vr)
 		ft_close_window(vr);
 	vr->pxm -= 1;
 	vr->pxw -= 64;
+	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->w, i2a(vr->steps));
 	vr->steps += 1;
-	ft_printf("number of steps : %d\n", vr->steps);
+	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->w, i2a(vr->steps));
 }

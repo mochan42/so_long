@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/10 14:12:06 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/10 15:19:35 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ typedef struct s_prgm {
 	int		pxw;
 	int		pyw;
 	int		steps;
+	int		mxw;
+	int		myw;
+	int		mcxw;
+	int		b;
+	int		w;
 }				t_prgm;
 
 /* ########################################################################## */
@@ -101,6 +106,9 @@ int		ft_strlen_sl(char *s);
 
 /* utils_2.c */
 void	free_map(t_prgm *vars);
+int		ft_abs(int n);
+char	*i2a(int nbr);
+int		get_len(int n);
 
 /* window.c */
 int		ft_close_window(t_prgm *vars);
