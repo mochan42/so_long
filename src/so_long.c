@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:14:21 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/10 22:50:27 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/11 13:59:01 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void	init_game(t_prgm *vr, char *s)
 	vr->mcxw = (64 * (vr->col + 1)) / 2;
 	vr->b = 0x00000000;
 	vr->w = 0x00FFFFFF;
+	vr->b_animate = 1;
+	// vr->counter = 100;
 }
 
 void	init_player_pos(t_prgm *vars)
@@ -68,6 +70,72 @@ void	init_moves_display(t_prgm *vr)
 	free(str);
 }
 
+int	ft_update(t_prgm *vr)
+{
+	int		frame;
+	int		speed;
+	char	*path;
+
+	speed = 6;
+	path = NULL;
+	if (vr->b_animate == 1)
+	{
+		vr->counter++;
+		ft_printf("vr->counter = %d\n", vr->counter);
+		frame = vr->counter / speed;
+		ft_printf("\tframe = %d\n", frame);
+		if (frame % 1)
+		{
+			path = "./images/xpm/treasure_chest_0_64x64.xpm";
+			vr->img = mlx_xpm_file_to_image(vr->mlx, path, vr->wid, vr->hei);
+			mlx_put_image_to_window(vr->mlx, vr->win, vr->img, 64, 64);
+		}
+		if (frame % 2)
+		{
+			path = "./images/xpm/treasure_chest_1_64x64.xpm";
+			vr->img = mlx_xpm_file_to_image(vr->mlx, path, vr->wid, vr->hei);
+			mlx_put_image_to_window(vr->mlx, vr->win, vr->img, 64, 64);
+		}
+		if (frame % 3)
+		{
+			path = "./images/xpm/treasure_chest_2_64x64.xpm";
+			vr->img = mlx_xpm_file_to_image(vr->mlx, path, vr->wid, vr->hei);
+			mlx_put_image_to_window(vr->mlx, vr->win, vr->img, 64, 64);
+		}
+		if (frame % 4)
+		{
+			path = "./images/xpm/treasure_chest_3_64x64.xpm";
+			vr->img = mlx_xpm_file_to_image(vr->mlx, path, vr->wid, vr->hei);
+			mlx_put_image_to_window(vr->mlx, vr->win, vr->img, 64, 64);
+		}
+		if (frame % 5)
+		{
+			path = "./images/xpm/treasure_chest_4_64x64.xpm";
+			vr->img = mlx_xpm_file_to_image(vr->mlx, path, vr->wid, vr->hei);
+			mlx_put_image_to_window(vr->mlx, vr->win, vr->img, 64, 64);
+		}
+		if (frame % 6)
+		{
+			path = "./images/xpm/treasure_chest_5_64x64.xpm";
+			vr->img = mlx_xpm_file_to_image(vr->mlx, path, vr->wid, vr->hei);
+			mlx_put_image_to_window(vr->mlx, vr->win, vr->img, 64, 64);
+		}
+		if (frame % 7)
+		{
+			path = "./images/xpm/treasure_chest_6_64x64.xpm";
+			vr->img = mlx_xpm_file_to_image(vr->mlx, path, vr->wid, vr->hei);
+			mlx_put_image_to_window(vr->mlx, vr->win, vr->img, 64, 64);
+		}
+		if (frame % 8)
+		{
+			path = "./images/xpm/treasure_chest_7_64x64.xpm";
+			vr->img = mlx_xpm_file_to_image(vr->mlx, path, vr->wid, vr->hei);
+			mlx_put_image_to_window(vr->mlx, vr->win, vr->img, 64, 64);
+		}
+	}
+	return (0);
+}
+
 int	main(int ac, char **av)
 {	
 	t_prgm	gme;
@@ -81,8 +149,9 @@ int	main(int ac, char **av)
 	check_map(&gme);
 	init_player_pos(&gme);
 	display_map_window(&gme);
-	mlx_key_hook(gme.win, key_hook, &gme);
+	mlx_loop_hook(gme.mlx, ft_update, (void *)&gme);
 	mlx_hook(gme.win, 17, 0, ft_close_window, &gme);
+	mlx_key_hook(gme.win, key_hook, &gme);
 	mlx_loop(gme.mlx);
 	return (0);
 }

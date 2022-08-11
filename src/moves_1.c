@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 21:20:22 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/10 21:08:08 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/11 13:58:38 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	move_up(t_prgm *vr)
 	{
 		vr->collect_nb--;
 		vr->map[vr->pym - 1][vr->pxm] = '0';
+		vr->b_animate = 0;
 	}
 	if (vr->map[vr->pym - 1][vr->pxm] == 'E' && vr->collect_nb != 0)
 		return ;
