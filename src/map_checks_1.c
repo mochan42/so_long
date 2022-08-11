@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 21:53:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/11 14:00:26 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/11 16:02:46 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	check_exit(t_prgm *vars)
 	}
 	if (vars->exit_nb < 1)
 	{
-		ft_printf("Map error : no exit was found (min : 1).\n");
+		ft_printf("Error\nNo exit was found (min : 1).\n");
 		exit (0);
 	}
 }
@@ -55,7 +55,7 @@ void	check_player(t_prgm *vars)
 	}
 	if (vars->player_nb != 1)
 	{
-		ft_printf("Map error : no player or more than 1 player.\n");
+		ft_printf("Error\nNo player or more than 1 player.\n");
 		exit (0);
 	}
 }
@@ -79,7 +79,7 @@ void	check_collectible(t_prgm *vars)
 	}
 	if (vars->collect_nb < 1)
 	{
-		ft_printf("Map error : no collectible was found (min : 1).\n");
+		ft_printf("Error\nNo collectible was found (min : 1).\n");
 		exit (0);
 	}
 }
@@ -103,7 +103,7 @@ void	check_valid_char(t_prgm *vars)
 	}
 	if (vars->invalid_char > 0)
 	{
-		ft_printf("Map error : only authorized characters : 1, 0, C, E, P.\n");
+		ft_printf("Error\nOnly authorized characters : 1, 0, C, E, P.\n");
 		exit (0);
 	}
 }

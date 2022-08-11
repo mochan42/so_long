@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 11:16:05 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/11 11:24:25 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/11 15:37:25 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*choose_tile_path(char c)
 	else if (c == 'E')
 		tile_path = "./images/xpm/exit_v2_tile_64x64.xpm";
 	else if (c == 'C')
-		tile_path = "./images/xpm/treasure_chest_0_64x64.xpm";
+		tile_path = "./images/xpm/treasure_chest_6_64x64.xpm";
 	return (tile_path);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/11 13:57:24 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/12 00:50:29 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,31 +27,35 @@
 /* STRUCTURES */
 
 typedef struct s_prgm {
-	void	*mlx;
-	void	*win;
-	char	*map_path;
-	int		col;
-	int		row;
-	char	**map;
-	int		*wid;
-	int		*hei;
-	void	*img;
-	int		exit_nb;
-	int		player_nb;
-	int		collect_nb;
-	int		invalid_char;
-	int		pxm;
-	int		pym;
-	int		pxw;
-	int		pyw;
-	int		steps;
-	int		mxw;
-	int		myw;
-	int		mcxw;
-	int		b;
-	int		w;
-	int		counter;
-	int		b_animate;
+	void		*mlx;
+	void		*win;
+	char		*map_path;
+	int			col;
+	int			row;
+	char		**map;
+	int			*wid;
+	int			*hei;
+	void		*img;
+	char		*path_img;
+	int			exit_nb;
+	int			player_nb;
+	int			collect_nb;
+	int			invalid_char;
+	int			pxm;
+	int			pym;
+	int			pxw;
+	int			pyw;
+	int			steps;
+	int			mxw;
+	int			myw;
+	int			mcxw;
+	int			b;
+	int			w;
+	int			b_animate;
+	int			fc_located;
+	int			fcxw;
+	int			fcyw;
+	int			counter;
 }				t_prgm;
 
 /* ########################################################################## */
@@ -65,6 +69,13 @@ typedef struct s_prgm {
 
 /* ########################################################################## */
 /* FUNCTIONS */
+
+/* animation_1.c */
+void	find_1st_collectible(t_prgm *vr);
+void	ft_image_1st_collectible_mapping(t_prgm *vars, int n);
+void	ft_update_image_1st_collectible(t_prgm *vars, int n);
+void	animate_1st_collectible(t_prgm *vr);
+// void	ft_put_xpm_to_image_collectible(t_prgm *vr, int n);
 
 /* hooks.c */
 int		key_hook(int keycode, t_prgm *vars);

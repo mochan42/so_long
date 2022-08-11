@@ -34,6 +34,7 @@ END_COLOR			:= \033[0;39m
 
 SRC_FILES			:=	so_long.c window.c hooks.c utils_1.c utils_2.c map.c\
 						map_checks_1.c map_checks_2.c moves_1.c moves_2.c\
+						animation_1.c
 
 OBJ_FILES			:= ${SRC_FILES:.c=.o}
 SRC					:= $(addprefix $(SRC_DIR), $(SRC_FILES))
@@ -49,7 +50,7 @@ $(NAME): $(OBJ)
 	make -C $(MLX_DIR)
 	echo "make $(FT_PRINTF_DIR)"
 	make -C $(FT_PRINTF_DIR)
-	# echo "make $(GET_NEXT_LINE_DIR)"
+	echo "make $(GET_NEXT_LINE_DIR)"
 	make -C $(GET_NEXT_LINE_DIR)
 	$(CC) $(CFLAGS) $(OBJ) $(MLX_A) $(FT_PRINTF_A) $(GET_NEXT_LINE_A) -framework OpenGL -framework AppKit -o $(NAME)
 	echo "$(GREEN)$(NAME) compiled :)$(END_COLOR)"

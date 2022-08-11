@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 16:18:41 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/10 22:59:40 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/11 16:05:00 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	check_empty_map(t_prgm *vars)
 {
 	if (vars->col == 0)
 	{
-		ft_printf("Map is missing some elements.\n");
+		ft_printf("Error\nMap is missing some elements.\n");
 		exit (0);
 	}
 }
@@ -30,7 +30,7 @@ void	check_rectangle(t_prgm *vars)
 	{
 		if (ft_strlen_sl(vars->map[0]) != ft_strlen_sl(vars->map[j]))
 		{
-			ft_printf("Map is not rectangular or some elements are absent.\n");
+			ft_printf("Error\nMap not rectangular or some elements absent.\n");
 			exit (0);
 		}
 		j++;
@@ -48,7 +48,7 @@ void	check_ns_wall(t_prgm *vars)
 	{
 		if (vars->map[0][i] != '1')
 		{
-			ft_printf("Map error : north wall has elements other than 1.\n");
+			ft_printf("Error\nNorth wall has elements other than 1.\n");
 			exit(0);
 		}
 		i++;
@@ -58,7 +58,7 @@ void	check_ns_wall(t_prgm *vars)
 	{
 		if (vars->map[last_row_idx][i] != '1')
 		{
-			ft_printf("Map error : south wall has elements other than 1.\n");
+			ft_printf("Error\nSouth wall has elements other than 1.\n");
 			exit(0);
 		}
 		i++;
@@ -76,7 +76,7 @@ void	check_ew_wall(t_prgm *vars)
 	{
 		if (vars->map[j][0] != '1')
 		{
-			ft_printf("Map error : west wall has elements other than 1.\n");
+			ft_printf("Error\nWest wall has elements other than 1.\n");
 			exit(0);
 		}
 		j++;
@@ -86,7 +86,7 @@ void	check_ew_wall(t_prgm *vars)
 	{
 		if (vars->map[j][last_col_idx] != '1')
 		{
-			ft_printf("Map error : east wall has elements other than 1.\n");
+			ft_printf("Error\nEast wall has elements other than 1.\n");
 			exit(0);
 		}
 		j++;
@@ -100,22 +100,22 @@ void	check_map_file_extension(t_prgm *vars)
 	l = ft_strlen(vars->map_path);
 	if (vars->map_path[--l] != 'r')
 	{
-		ft_printf("Map filename extension NOK : 3rd extension must be 'r'.\n");
+		ft_printf("Error\nMap filename extension is incorrect.\n");
 		exit (0);
 	}
 	if (vars->map_path[--l] != 'e')
 	{
-		ft_printf("Map filename extension NOK : 2nd extension must be 'e'.\n");
+		ft_printf("Error\nMap filename extension is incorrect.\n");
 		exit (0);
 	}
 	if (vars->map_path[--l] != 'b')
 	{
-		ft_printf("Map filename extension NOK : 1st extension must be 'b'.\n");
+		ft_printf("Error\nMap filename extension is incorrect.\n");
 		exit (0);
 	}
 	if (vars->map_path[--l] != '.')
 	{
-		ft_printf("Map filename NOK : no file extension'.\n");
+		ft_printf("Error\nMap filename extension is incorrect.\n");
 		exit (0);
 	}
 }

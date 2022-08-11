@@ -6,12 +6,12 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:52:17 by mochan            #+#    #+#             */
-/*   Updated: 2022/06/05 17:24:48 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/11 15:57:49 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
+#include "../ft_printf/ft_printf.h"
 
 char	*output(char *string1)
 {
@@ -71,7 +71,10 @@ char	*get_next_line(int fd)
 	char		*string2;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE >= 2147483647)
-		return (0);
+	{
+		ft_printf("Error\nFile not found.\n");
+		exit (0);
+	}
 	string1 = fillstring(fd, string1);
 	if (!string1)
 		return (NULL);
