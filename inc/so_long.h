@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/12 14:17:01 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/12 20:22:37 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,15 +118,17 @@ int		count_nb_col(char *map_path);
 int		count_nb_row(char *map_path);
 int		ft_strchr_sl(char *s, char c);
 int		ft_strlen_sl(char *s);
-
+int		get_len(int n);
 
 /* utils_2.c */
-void	free_map(t_prgm *vars);
-void	free_all(t_prgm *vars);
 void	quit_prgm(t_prgm *vars);
 int		ft_abs(int n);
 char	*i2a(int nbr);
-int		get_len(int n);
+
+/* utils_3.c */
+void	free_map(t_prgm *vars);
+void	free_all(t_prgm *vars);
+// void	quit_prgm(t_prgm *vars);
 
 /* window.c */
 int		ft_close_window(t_prgm *vars);

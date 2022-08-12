@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:14:21 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/12 13:33:25 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/12 20:13:52 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	init_game(t_prgm *vr, char *s)
 	char	*title;
 
 	title = "so_long";
+	vr->map = NULL;
 	vr->map_path = s;
 	vr->col = count_nb_col(vr->map_path);
 	vr->row = count_nb_row(vr->map_path);
@@ -45,7 +46,8 @@ void	init_player_pos(t_prgm *vars)
 	int	i;
 
 	j = 0;
-	while (vars->map[j] != NULL)
+	// while (vars->map[j] != NULL)
+	while (j < vars->row)
 	{
 		i = 0;
 		while (vars->map[j][i] != '\n' && vars->map[j][i] != '\0')
@@ -70,7 +72,8 @@ void	init_moves_display(t_prgm *vr)
 	str = i2a(vr->steps);
 	mlx_string_put(vr->mlx, vr->win, vr->mxw, vr->myw, vr->w, "MOVES :");
 	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->w, str);
-	free(str);
+	if (str)
+		free(str);
 }
 
 int	ft_update(t_prgm *vr)

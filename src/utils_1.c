@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 23:30:23 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/12 13:40:27 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/12 19:41:50 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,13 +75,13 @@ int	ft_strlen_sl(char *s)
 	i = 0;
 	if (!s)
 		return (0);
-	while (s[i] != '\0')
+	while (s[i] != '\0' && s[i] != '\n')
 	{
 		len++;
 		i++;
 	}
-	if (ft_strchr_sl(s, '\n'))
-		len--;
+	// if (ft_strchr_sl(s, '\n'))
+	// 	len--;
 	return (len);
 }
 

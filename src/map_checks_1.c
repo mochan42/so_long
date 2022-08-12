@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 21:53:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/12 13:39:27 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/12 20:11:47 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	check_exit(t_prgm *vars)
 	if (vars->exit_nb < 1)
 	{
 		ft_printf("Error\nNo exit was found (min : 1).\n");
-		quit_prgm(vars);
+		exit (0);
 	}
 }
 
@@ -56,7 +56,7 @@ void	check_player(t_prgm *vars)
 	if (vars->player_nb != 1)
 	{
 		ft_printf("Error\nNo player or more than 1 player.\n");
-		quit_prgm(vars);
+		exit (0);
 	}
 }
 
@@ -80,7 +80,7 @@ void	check_collectible(t_prgm *vars)
 	if (vars->collect_nb < 1)
 	{
 		ft_printf("Error\nNo collectible was found (min : 1).\n");
-		quit_prgm(vars);
+		exit (0);
 	}
 }
 
@@ -104,7 +104,7 @@ void	check_valid_char(t_prgm *vars)
 	if (vars->invalid_char > 0)
 	{
 		ft_printf("Error\nOnly authorized characters : 1, 0, C, E, P.\n");
-		quit_prgm(vars);
+		exit (0);
 	}
 }
 

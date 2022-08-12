@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:47:07 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/12 14:24:55 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/12 15:15:36 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,6 @@ static int	ct_to_frame(int counter, int frames)
 
 void	animate_1st_collectible(t_prgm *vr)
 {	
-	char	*path;
-
-	path = NULL;
 	if (vr->b_animate == 1 && vr->fc_located == 1)
 	{
 		vr->counter++;

@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 21:20:22 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/12 11:59:46 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/12 16:33:06 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ void	move_up(t_prgm *vr)
 	vr->steps += 1;
 	str = i2a(vr->steps);
 	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->w, str);
-	free(str);
+	if (str)
+		free(str);
 }
 
 void	move_down(t_prgm *vr)
@@ -65,7 +66,8 @@ void	move_down(t_prgm *vr)
 	vr->steps += 1;
 	str = i2a(vr->steps);
 	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->w, str);
-	free(str);
+	if (str)
+		free(str);
 }
 
 void	move_right(t_prgm *vr)
@@ -93,7 +95,8 @@ void	move_right(t_prgm *vr)
 	vr->steps += 1;
 	str = i2a(vr->steps);
 	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->w, str);
-	free(str);
+	if (str)
+		free(str);
 }
 
 void	move_left(t_prgm *vr)
@@ -121,5 +124,6 @@ void	move_left(t_prgm *vr)
 	vr->steps += 1;
 	str = i2a(vr->steps);
 	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->w, str);
-	free(str);
+	if (str)
+		free(str);
 }
