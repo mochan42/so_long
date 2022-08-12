@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:47:07 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/12 10:27:51 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/12 14:24:55 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,31 +57,20 @@ void	ft_update_image_1st_collectible(t_prgm *vars, int n)
 		vars->fcxw, vars->fcyw);
 }
 
+static int	ct_to_frame(int counter, int frames)
+{
+	return (counter / SPEED % frames);
+}
+
 void	animate_1st_collectible(t_prgm *vr)
 {	
 	char	*path;
 
 	path = NULL;
-	usleep(100000);
 	if (vr->b_animate == 1 && vr->fc_located == 1)
 	{
 		vr->counter++;
-		if (vr->counter % 1)
-			ft_update_image_1st_collectible(vr, 1);
-		if (vr->counter % 2)
-			ft_update_image_1st_collectible(vr, 2);
-		if (vr->counter % 3)
-			ft_update_image_1st_collectible(vr, 3);
-		if (vr->counter % 4)
-			ft_update_image_1st_collectible(vr, 4);
-		if (vr->counter % 5)
-			ft_update_image_1st_collectible(vr, 5);
-		if (vr->counter % 6)
-			ft_update_image_1st_collectible(vr, 6);
-		if (vr->counter % 7)
-			ft_update_image_1st_collectible(vr, 7);
-		if (vr->counter % 8)
-			ft_update_image_1st_collectible(vr, 8);
+		ft_update_image_1st_collectible(vr, ct_to_frame(vr->counter, 8) + 1);
 		mlx_put_image_to_window(vr->mlx, vr->win, vr->img, vr->fcxw, vr->fcyw);
 	}
 }
