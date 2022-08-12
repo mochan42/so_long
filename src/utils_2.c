@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 17:10:21 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/12 21:41:07 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/13 01:01:23 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,17 @@ void	free_map(t_prgm *vars)
 	}
 	if (vars->map)
 		free(vars->map);
+}
+
+void	init_animation(t_prgm *vr)
+{
+	vr->path_img_1st_col = NULL;
+	vr->path_img_plrr = NULL;
+	vr->b_animate_fc = 1;
+	vr->fc_located = 0;
+	vr->fcxw = 0;
+	vr->fcyw = 0;
+	vr->counter = 0;
+	vr->b_right = 1;
+	vr->b_left = 1;
 }

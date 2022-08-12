@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:14:21 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/12 21:18:33 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/13 00:55:50 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,7 @@ void	init_game(t_prgm *vr, char *s)
 	vr->mcxw = (64 * (vr->col)) / 2;
 	vr->b = 0x00000000;
 	vr->w = 0x00FFFFFF;
-	vr->b_animate = 1;
-	vr->fc_located = 0;
-	vr->fcxw = 0;
-	vr->fcyw = 0;
-	vr->counter = 0;
+	init_animation(vr);
 }
 
 void	init_player_pos(t_prgm *vars)
@@ -78,6 +74,7 @@ void	init_moves_display(t_prgm *vr)
 int	ft_update(t_prgm *vr)
 {
 	animate_1st_collectible(vr);
+	animate_player(vr);
 	return (0);
 }
 

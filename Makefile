@@ -34,7 +34,8 @@ END_COLOR			:= \033[0;39m
 
 SRC_FILES			:=	so_long.c window.c hooks.c utils_1.c utils_2.c\
 						map.c map_checks_1.c map_checks_2.c\
-						moves_1.c moves_2.c animation_1.c
+						moves_1.c moves_2.c moves_3.c\
+						animation_1.c animation_2.c animation_3.c
 
 OBJ_FILES			:= ${SRC_FILES:.c=.o}
 SRC					:= $(addprefix $(SRC_DIR), $(SRC_FILES))

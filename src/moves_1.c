@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 21:20:22 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/12 16:33:06 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/13 01:06:38 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	move_up(t_prgm *vr)
 		vr->collect_nb--;
 		vr->map[vr->pym - 1][vr->pxm] = '0';
 		if (vr->pxm == vr->fcxw / 64 && vr->pym - 1 == vr->fcyw / 64)
-			vr->b_animate = 0;
+			vr->b_animate_fc = 0;
 	}
 	if (vr->map[vr->pym - 1][vr->pxm] == 'E' && vr->collect_nb != 0)
 		return ;
@@ -54,7 +54,7 @@ void	move_down(t_prgm *vr)
 		vr->collect_nb--;
 		vr->map[vr->pym + 1][vr->pxm] = '0';
 		if (vr->pxm == vr->fcxw / 64 && vr->pym + 1 == vr->fcyw / 64)
-			vr->b_animate = 0;
+			vr->b_animate_fc = 0;
 	}
 	if (vr->map[vr->pym + 1][vr->pxm] == 'E' && vr->collect_nb != 0)
 		return ;
@@ -83,7 +83,7 @@ void	move_right(t_prgm *vr)
 		vr->collect_nb--;
 		vr->map[vr->pym][vr->pxm + 1] = '0';
 		if (vr->pxm + 1 == vr->fcxw / 64 && vr->pym == vr->fcyw / 64)
-			vr->b_animate = 0;
+			vr->b_animate_fc = 0;
 	}
 	if (vr->map[vr->pym][vr->pxm + 1] == 'E' && vr->collect_nb != 0)
 		return ;
@@ -91,7 +91,7 @@ void	move_right(t_prgm *vr)
 		ft_close_window(vr);
 	vr->pxm += 1;
 	vr->pxw += 64;
-	put_black_patch_to_window(vr);
+	put_black_patch_to_window_bool_right(vr);
 	vr->steps += 1;
 	str = i2a(vr->steps);
 	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->w, str);
@@ -112,7 +112,7 @@ void	move_left(t_prgm *vr)
 		vr->collect_nb--;
 		vr->map[vr->pym][vr->pxm - 1] = '0';
 		if (vr->pxm - 1 == vr->fcxw / 64 && vr->pym == vr->fcyw / 64)
-			vr->b_animate = 0;
+			vr->b_animate_fc = 0;
 	}
 	if (vr->map[vr->pym][vr->pxm - 1] == 'E' && vr->collect_nb != 0)
 		return ;
@@ -120,7 +120,7 @@ void	move_left(t_prgm *vr)
 		ft_close_window(vr);
 	vr->pxm -= 1;
 	vr->pxw -= 64;
-	put_black_patch_to_window(vr);
+	put_black_patch_to_window_bool_left(vr);
 	vr->steps += 1;
 	str = i2a(vr->steps);
 	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->w, str);

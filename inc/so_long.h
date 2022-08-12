@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/12 21:51:11 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/13 01:10:40 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ typedef struct s_prgm {
 	int			*wid;
 	int			*hei;
 	void		*img;
-	char		*path_img;
+	char		*path_img_1st_col;
+	char		*path_img_plrr;
+	char		*path_img_plrl;
 	int			exit_nb;
 	int			player_nb;
 	int			collect_nb;
@@ -51,11 +53,13 @@ typedef struct s_prgm {
 	int			mcxw;
 	int			b;
 	int			w;
-	int			b_animate;
+	int			b_animate_fc;
 	int			fc_located;
 	int			fcxw;
 	int			fcyw;
 	int			counter;
+	int			b_right;
+	int			b_left;
 }				t_prgm;
 
 /* ########################################################################## */
@@ -67,14 +71,27 @@ typedef struct s_prgm {
 # define KEY_S 1
 # define KEY_D 2
 # define SPEED 10
+# define SPEED_2 15
+
 /* ########################################################################## */
 /* FUNCTIONS */
 
 /* animation_1.c */
 void	animate_1st_collectible(t_prgm *vr);
+int		ct_to_frame(int counter, int frames);
 void	find_1st_collectible(t_prgm *vr);
 void	ft_image_1st_collectible_mapping(t_prgm *vars, int n);
 void	ft_update_image_1st_collectible(t_prgm *vars, int n);
+
+/* animation_2.c */
+void	animate_player(t_prgm *vr);
+void	find_player(t_prgm *vr);
+void	ft_image_player_mapping(t_prgm *vars, int n);
+void	ft_update_image_player_rg(t_prgm *vars, int n);
+
+/* animation_3.c */
+void	ft_image_player_mapping_lf(t_prgm *vars, int n);
+void	ft_update_image_player_lf(t_prgm *vars, int n);
 
 /* hooks.c */
 int		key_hook(int keycode, t_prgm *vars);
@@ -103,11 +120,15 @@ void	move_right(t_prgm *vr);
 void	move_up(t_prgm *vr);
 
 /* moves_2.c */
-void	put_black_patch_to_window(t_prgm *vr);
 void	put_move_down_to_window(t_prgm *vr);
 void	put_move_left_to_window(t_prgm *vr);
 void	put_move_right_to_window(t_prgm *vr);
 void	put_move_up_to_window(t_prgm *vr);
+
+/* moves_3.c */
+void	put_black_patch_to_window(t_prgm *vr);
+void	put_black_patch_to_window_bool_right(t_prgm *vr);
+void	put_black_patch_to_window_bool_left(t_prgm *vr);
 
 /* so_long.c */
 char	*dupe_str(char *s, int len_str);
@@ -123,6 +144,7 @@ int		get_len(int n);
 void	free_map(t_prgm *vars);
 int		ft_abs(int n);
 char	*i2a(int nbr);
+void	init_animation(t_prgm *vr);
 
 /* window.c */
 char	*choose_tile_path(char c);
