@@ -33,7 +33,7 @@ END_COLOR			:= \033[0;39m
 # SOURCES
 
 SRC_FILES			:=	so_long.c window.c hooks.c utils_1.c utils_2.c\
-						utils_3.c map.c map_checks_1.c map_checks_2.c\
+						map.c map_checks_1.c map_checks_2.c\
 						moves_1.c moves_2.c animation_1.c
 
 OBJ_FILES			:= ${SRC_FILES:.c=.o}

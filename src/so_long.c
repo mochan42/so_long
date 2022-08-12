@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:14:21 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/12 20:13:52 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/12 21:18:33 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	init_player_pos(t_prgm *vars)
 	int	i;
 
 	j = 0;
-	// while (vars->map[j] != NULL)
 	while (j < vars->row)
 	{
 		i = 0;

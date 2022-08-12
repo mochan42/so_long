@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/07 16:18:41 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/12 20:08:14 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/12 21:20:37 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,8 @@ void	check_rectangle(t_prgm *vars)
 	int	j;
 
 	j = 1;
-	ft_printf("\n");
-	ft_printf("vars->map[0] length is : %d\n", ft_strlen_sl(vars->map[0]));
-	// while (vars->map[j] != NULL)
 	while (j < vars->row)
 	{
-		ft_printf("vars->map[%d] length is : %d\n", j, ft_strlen_sl(vars->map[j]));
 		if (ft_strlen_sl(vars->map[0]) != ft_strlen_sl(vars->map[j]))
 		{
 			ft_printf("Error\nMap not rectangular or some elements absent.\n");

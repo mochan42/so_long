@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 23:30:23 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/12 19:41:50 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/12 21:20:07 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ int	ft_strchr_sl(char *s, char c)
 		return (0);
 }
 
-// Need to decrease the length of the string by 1 because the last line does
-// not have the new line character.
+// Need to not take into account the newline character because every line
+// have a newline character except the last line.
 int	ft_strlen_sl(char *s)
 {
 	int	len;
@@ -80,8 +80,6 @@ int	ft_strlen_sl(char *s)
 		len++;
 		i++;
 	}
-	// if (ft_strchr_sl(s, '\n'))
-	// 	len--;
 	return (len);
 }
 

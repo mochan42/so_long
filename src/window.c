@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 11:16:05 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/12 20:22:24 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/12 21:26:42 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 int	ft_close_window(t_prgm *vars)
 {
-	// quit_prgm(vars);
-	free_all(vars);
-	ft_printf("%d\n", vars->row);
+	mlx_destroy_window(vars->mlx, vars->win);
+	ft_printf("exit so_long");
 	exit (0);
 	return (0);
 }

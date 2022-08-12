@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/12 20:22:37 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/12 21:51:11 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,10 @@ typedef struct s_prgm {
 /* FUNCTIONS */
 
 /* animation_1.c */
+void	animate_1st_collectible(t_prgm *vr);
 void	find_1st_collectible(t_prgm *vr);
 void	ft_image_1st_collectible_mapping(t_prgm *vars, int n);
 void	ft_update_image_1st_collectible(t_prgm *vars, int n);
-void	animate_1st_collectible(t_prgm *vr);
-// void	ft_put_xpm_to_image_collectible(t_prgm *vr, int n);
 
 /* hooks.c */
 int		key_hook(int keycode, t_prgm *vars);
@@ -84,11 +83,11 @@ int		key_hook(int keycode, t_prgm *vars);
 char	**store_map(t_prgm vars);
 
 /* map_checks_1.c */
-void	check_valid_char(t_prgm *vars);
 void	check_collectible(t_prgm *vars);
 void	check_exit(t_prgm *vars);
 void	check_map(t_prgm *vars);
 void	check_player(t_prgm *vars);
+void	check_valid_char(t_prgm *vars);
 
 /* map_checks_2.c */
 void	check_empty_map(t_prgm *vars);
@@ -104,11 +103,11 @@ void	move_right(t_prgm *vr);
 void	move_up(t_prgm *vr);
 
 /* moves_2.c */
+void	put_black_patch_to_window(t_prgm *vr);
 void	put_move_down_to_window(t_prgm *vr);
 void	put_move_left_to_window(t_prgm *vr);
 void	put_move_right_to_window(t_prgm *vr);
 void	put_move_up_to_window(t_prgm *vr);
-void	put_black_patch_to_window(t_prgm *vr);
 
 /* so_long.c */
 char	*dupe_str(char *s, int len_str);
@@ -121,18 +120,13 @@ int		ft_strlen_sl(char *s);
 int		get_len(int n);
 
 /* utils_2.c */
-void	quit_prgm(t_prgm *vars);
+void	free_map(t_prgm *vars);
 int		ft_abs(int n);
 char	*i2a(int nbr);
 
-/* utils_3.c */
-void	free_map(t_prgm *vars);
-void	free_all(t_prgm *vars);
-// void	quit_prgm(t_prgm *vars);
-
 /* window.c */
-int		ft_close_window(t_prgm *vars);
 char	*choose_tile_path(char c);
+int		ft_close_window(t_prgm *vars);
 void	display_map_window(t_prgm *vars);
 void	init_moves_display(t_prgm *vr);
 void	put_map_to_window(t_prgm *vars);

@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 17:10:21 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/12 16:03:37 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/12 21:41:07 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,19 @@ char	*i2a(int nbr)
 		nbr /= 10;
 	}
 	return (str);
+}
+
+void	free_map(t_prgm *vars)
+{
+	int	i;
+
+	i = 0;
+	while (vars->map[i])
+	{
+		if (vars->map[i])
+			free(vars->map[i]);
+		i++;
+	}
+	if (vars->map)
+		free(vars->map);
 }
