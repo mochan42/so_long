@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 17:10:21 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/10 15:24:42 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/12 13:40:16 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,26 +25,25 @@ void	free_map(t_prgm *vars)
 	free(vars->map);
 }
 
+void	free_all(t_prgm *vars)
+{
+	free_map(vars);
+	mlx_destroy_window(vars->mlx, vars->win);
+	free(vars->mlx);
+	ft_printf("exit so_long");
+}
+
+void	quit_prgm(t_prgm *vars)
+{
+	free_all(vars);
+	exit (0);
+}
+
 int	ft_abs(int n)
 {
 	if (n < 0)
 		return (-n);
 	return (n);
-}
-
-int	get_len(int n)
-{
-	int	len;
-
-	len = 0;
-	if (n < 0)
-		len++;
-	while (n != 0)
-	{
-		len++;
-		n /= 10;
-	}
-	return (len);
 }
 
 char	*i2a(int nbr)

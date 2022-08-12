@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 21:20:22 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/11 15:45:00 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/12 11:59:46 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	move_up(t_prgm *vr)
 	{
 		vr->collect_nb--;
 		vr->map[vr->pym - 1][vr->pxm] = '0';
-		vr->b_animate = 0;
+		if (vr->pxm == vr->fcxw / 64 && vr->pym - 1 == vr->fcyw / 64)
+			vr->b_animate = 0;
 	}
 	if (vr->map[vr->pym - 1][vr->pxm] == 'E' && vr->collect_nb != 0)
 		return ;
@@ -51,7 +52,8 @@ void	move_down(t_prgm *vr)
 	{
 		vr->collect_nb--;
 		vr->map[vr->pym + 1][vr->pxm] = '0';
-		vr->b_animate = 0;
+		if (vr->pxm == vr->fcxw / 64 && vr->pym + 1 == vr->fcyw / 64)
+			vr->b_animate = 0;
 	}
 	if (vr->map[vr->pym + 1][vr->pxm] == 'E' && vr->collect_nb != 0)
 		return ;
@@ -78,7 +80,8 @@ void	move_right(t_prgm *vr)
 	{
 		vr->collect_nb--;
 		vr->map[vr->pym][vr->pxm + 1] = '0';
-		vr->b_animate = 0;
+		if (vr->pxm + 1 == vr->fcxw / 64 && vr->pym == vr->fcyw / 64)
+			vr->b_animate = 0;
 	}
 	if (vr->map[vr->pym][vr->pxm + 1] == 'E' && vr->collect_nb != 0)
 		return ;
@@ -105,7 +108,8 @@ void	move_left(t_prgm *vr)
 	{
 		vr->collect_nb--;
 		vr->map[vr->pym][vr->pxm - 1] = '0';
-		vr->b_animate = 0;
+		if (vr->pxm - 1 == vr->fcxw / 64 && vr->pym == vr->fcyw / 64)
+			vr->b_animate = 0;
 	}
 	if (vr->map[vr->pym][vr->pxm - 1] == 'E' && vr->collect_nb != 0)
 		return ;

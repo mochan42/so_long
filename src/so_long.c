@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:14:21 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/12 00:55:48 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/12 13:33:25 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void	init_game(t_prgm *vr, char *s)
 	vr->collect_nb = 0;
 	vr->invalid_char = 0;
 	vr->steps = 0;
-	vr->mxw = (64 * (vr->col - 2)) / 2;
+	vr->mxw = ((64 * (vr->col)) / 2) - 64;
 	vr->myw = (64 * vr->row) + 32;
-	vr->mcxw = (64 * (vr->col + 1)) / 2;
+	vr->mcxw = (64 * (vr->col)) / 2;
 	vr->b = 0x00000000;
 	vr->w = 0x00FFFFFF;
 	vr->b_animate = 1;
@@ -68,7 +68,7 @@ void	init_moves_display(t_prgm *vr)
 	char	*str;
 
 	str = i2a(vr->steps);
-	mlx_string_put(vr->mlx, vr->win, vr->mxw, vr->myw, vr->w, "MOVES : ");
+	mlx_string_put(vr->mlx, vr->win, vr->mxw, vr->myw, vr->w, "MOVES :");
 	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->w, str);
 	free(str);
 }

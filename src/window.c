@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 11:16:05 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/11 15:37:25 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/12 13:39:09 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 // ft_free mlx xpm file to image
 int	ft_close_window(t_prgm *vars)
 {
-	free_map(vars);
-	mlx_destroy_window(vars->mlx, vars->win);
-	ft_printf("exit so_long");
-	exit (0);
+	quit_prgm(vars);
 	return (0);
 }
 
