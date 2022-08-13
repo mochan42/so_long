@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 17:10:21 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/13 01:01:23 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/13 17:27:01 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,19 @@ void	init_animation(t_prgm *vr)
 	vr->path_img_plrr = NULL;
 	vr->b_animate_fc = 1;
 	vr->fc_located = 0;
+	vr->fcxm = 0;
+	vr->fcym = 0;
 	vr->fcxw = 0;
 	vr->fcyw = 0;
 	vr->counter = 0;
 	vr->b_right = 1;
-	vr->b_left = 1;
+	vr->b_left = 0;
+	vr->path_img_vilr = NULL;
+	vr->b_activate_vill = 0;
+	vr->vxm = 0;
+	vr->vym = 0;
+	vr->vxw = 0;
+	vr->vyw = 0;
+	vr->b_v_right = 1;
+	vr->b_v_left = 0;
 }

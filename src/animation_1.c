@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:47:07 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/13 00:47:51 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/13 18:10:04 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	find_1st_collectible(t_prgm *vr)
 		j++;
 	while (vr->map[j][i] != 'C')
 		i++;
+	vr->fcxm = i;
+	vr->fcym = j;
 	vr->fcxw = i * 64;
 	vr->fcyw = j * 64;
 	vr->fc_located = 1;

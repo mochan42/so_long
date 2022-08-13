@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:14:21 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/13 00:55:50 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/13 18:15:21 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ int	ft_update(t_prgm *vr)
 {
 	animate_1st_collectible(vr);
 	animate_player(vr);
+	animate_villain(vr);
 	return (0);
 }
 
@@ -91,6 +92,7 @@ int	main(int ac, char **av)
 	check_map(&gme);
 	init_player_pos(&gme);
 	find_1st_collectible(&gme);
+	init_villain_pos(&gme);
 	display_map_window(&gme);
 	mlx_loop_hook(gme.mlx, ft_update, (void *)&gme);
 	mlx_hook(gme.win, 17, 0, ft_close_window, &gme);

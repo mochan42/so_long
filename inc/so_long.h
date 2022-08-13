@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/13 01:10:40 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/13 20:34:19 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,21 @@ typedef struct s_prgm {
 	int			w;
 	int			b_animate_fc;
 	int			fc_located;
+	int			fcxm;
+	int			fcym;
 	int			fcxw;
 	int			fcyw;
 	int			counter;
 	int			b_right;
 	int			b_left;
+	char		*path_img_vilr;
+	int			vxm;
+	int			vym;
+	int			vxw;
+	int			vyw;
+	int			b_activate_vill;
+	int			b_v_right;
+	int			b_v_left;
 }				t_prgm;
 
 /* ########################################################################## */
@@ -70,8 +80,10 @@ typedef struct s_prgm {
 # define KEY_A 0
 # define KEY_S 1
 # define KEY_D 2
-# define SPEED 10
+# define SPEED 50
 # define SPEED_2 15
+# define SPEED_3 15
+# define SPEED_4 10
 
 /* ########################################################################## */
 /* FUNCTIONS */
@@ -85,6 +97,7 @@ void	ft_update_image_1st_collectible(t_prgm *vars, int n);
 
 /* animation_2.c */
 void	animate_player(t_prgm *vr);
+int		ct_to_frame_2(int counter, int frames);
 void	find_player(t_prgm *vr);
 void	ft_image_player_mapping(t_prgm *vars, int n);
 void	ft_update_image_player_rg(t_prgm *vars, int n);
@@ -145,6 +158,15 @@ void	free_map(t_prgm *vars);
 int		ft_abs(int n);
 char	*i2a(int nbr);
 void	init_animation(t_prgm *vr);
+
+/* villain.c */
+void	animate_villain(t_prgm *vr);
+int		ct_to_frame_3(int counter, int frames);
+int		ct_to_frame_4(int counter, int frames);
+void	ft_image_villain_mapping_rg(t_prgm *vars, int n);
+void	ft_update_image_villain_rg(t_prgm *vars, int n);
+void	init_villain_pos(t_prgm *vr);
+void	villain_motion(t_prgm *vr, int n);
 
 /* window.c */
 char	*choose_tile_path(char c);
