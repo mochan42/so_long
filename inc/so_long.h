@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/13 20:34:19 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/14 00:56:29 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ typedef struct s_prgm {
 	int			b_activate_vill;
 	int			b_v_right;
 	int			b_v_left;
+	// int			counter_vil_mot;
 }				t_prgm;
 
 /* ########################################################################## */
@@ -80,10 +81,10 @@ typedef struct s_prgm {
 # define KEY_A 0
 # define KEY_S 1
 # define KEY_D 2
-# define SPEED 50
+# define SPEED 30
 # define SPEED_2 15
-# define SPEED_3 15
-# define SPEED_4 10
+# define SPEED_3 1
+# define SPEED_4 100
 
 /* ########################################################################## */
 /* FUNCTIONS */
@@ -164,7 +165,8 @@ void	animate_villain(t_prgm *vr);
 int		ct_to_frame_3(int counter, int frames);
 int		ct_to_frame_4(int counter, int frames);
 void	ft_image_villain_mapping_rg(t_prgm *vars, int n);
-void	ft_update_image_villain_rg(t_prgm *vars, int n);
+void	ft_update_image_villain_rg_down(t_prgm *vars, int n);
+void	ft_update_image_villain_rg_up(t_prgm *vars, int n);
 void	init_villain_pos(t_prgm *vr);
 void	villain_motion(t_prgm *vr, int n);
 

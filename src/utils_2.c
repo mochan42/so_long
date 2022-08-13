@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 17:10:21 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/13 17:27:01 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/14 00:54:03 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,5 @@ void	init_animation(t_prgm *vr)
 	vr->vyw = 0;
 	vr->b_v_right = 1;
 	vr->b_v_left = 0;
+	// vr->counter_vil_mot = 0;
 }

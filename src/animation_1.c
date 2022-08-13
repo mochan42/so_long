@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:47:07 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/13 18:10:04 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/13 23:33:12 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void	ft_update_image_1st_collectible(t_prgm *vars, int n)
 			vars->wid, vars->hei);
 	mlx_put_image_to_window(vars->mlx, vars->win, vars->img,
 		vars->fcxw, vars->fcyw);
+	// ft_printf("image path is . %s\n", vars->path_img_1st_col);
+	// usleep(10000);
 }
 
 int	ct_to_frame(int counter, int frames)
@@ -69,6 +71,8 @@ void	animate_1st_collectible(t_prgm *vr)
 	if (vr->b_animate_fc == 1 && vr->fc_located == 1)
 	{
 		vr->counter++;
+		// ft_printf("\t\tvr->counter in animate_1st collectible	= %d\n\n", vr->counter);
+		// ft_printf("\t\tct_to_frame(vr->counter, 8) + 1			= %d\n\n", ct_to_frame(vr->counter, 8));
 		ft_update_image_1st_collectible(vr, ct_to_frame(vr->counter, 8) + 1);
 	}
 }
