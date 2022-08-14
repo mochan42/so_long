@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/14 14:44:56 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/14 16:56:54 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,6 +144,12 @@ void	put_black_patch_to_window(t_prgm *vr);
 void	put_black_patch_to_window_bool_right(t_prgm *vr);
 void	put_black_patch_to_window_bool_left(t_prgm *vr);
 
+/* moves_4.c */
+void	collectible_handling_move_up(t_prgm *vr);
+void	collectible_handling_move_down(t_prgm *vr);
+void	collectible_handling_move_right(t_prgm *vr);
+void	collectible_handling_move_left(t_prgm *vr);
+
 /* so_long.c */
 char	*dupe_str(char *s, int len_str);
 
@@ -160,15 +166,22 @@ int		ft_abs(int n);
 char	*i2a(int nbr);
 void	init_animation(t_prgm *vr);
 
-/* villain.c */
+/* villain_1.c */
 void	animate_villain(t_prgm *vr);
-int		ct_to_frame_3(int counter, int frames);
-int		ct_to_frame_4(int counter, int frames);
 void	ft_image_villain_mapping_rg(t_prgm *vars, int n);
 void	ft_update_image_villain_rg_down(t_prgm *vars, int n);
 void	ft_update_image_villain_rg_up(t_prgm *vars, int n);
-void	init_villain_pos(t_prgm *vr);
 void	villain_motion(t_prgm *vr, int n);
+
+/* villain_2.c */
+int		ct_to_frame_3(int counter, int frames);
+int		ct_to_frame_4(int counter, int frames);
+void	init_villain_pos(t_prgm *vr);
+void	find_villain(t_prgm *vr);
+
+/* villain_3.c */
+void	image_handling_after_villain_move_down(t_prgm *vr);
+void	image_handling_after_villain_move_up(t_prgm *vr);
 
 /* window.c */
 char	*choose_tile_path(char c);

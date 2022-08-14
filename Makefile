@@ -34,8 +34,9 @@ END_COLOR			:= \033[0;39m
 
 SRC_FILES			:=	so_long.c window.c hooks.c utils_1.c utils_2.c\
 						map.c map_checks_1.c map_checks_2.c\
-						moves_1.c moves_2.c moves_3.c\
-						animation_1.c animation_2.c animation_3.c villain.c
+						moves_1.c moves_2.c moves_3.c moves_4.c\
+						animation_1.c animation_2.c animation_3.c \
+						villain_3.c villain_2.c villain_1.c
 
 OBJ_FILES			:= ${SRC_FILES:.c=.o}
 SRC					:= $(addprefix $(SRC_DIR), $(SRC_FILES))
@@ -47,14 +48,14 @@ OBJ					:= $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 all :	$(OBJ_DIR) $(NAME)
 
 $(NAME): $(OBJ)
-	echo "make $(MLX_DIR)"
+	@echo "$(BLUE)make $(MLX_DIR)$(END_COLOR)"
 	make -C $(MLX_DIR)
-	echo "make $(FT_PRINTF_DIR)"
+	@echo "$(BLUE)make $(FT_PRINTF_DIR)$(END_COLOR)"
 	make -C $(FT_PRINTF_DIR)
-	echo "make $(GET_NEXT_LINE_DIR)"
+	@echo "$(BLUE)make $(GET_NEXT_LINE_DIR)$(END_COLOR)"
 	make -C $(GET_NEXT_LINE_DIR)
 	$(CC) $(CFLAGS) $(OBJ) $(MLX_A) $(FT_PRINTF_A) $(GET_NEXT_LINE_A) -framework OpenGL -framework AppKit -o $(NAME)
-	echo "$(GREEN)$(NAME) compiled :)$(END_COLOR)"
+	@echo "$(GREEN)$(NAME) compiled :)$(END_COLOR)"
 # -C	:	make option that tells make to change directory before execution.
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c
@@ -68,7 +69,7 @@ $(OBJ_DIR)%.o : $(SRC_DIR)%.c
 #			file which will be linked with the so_long.h header file.
 
 $(OBJ_DIR):
-	mkdir $(OBJ_DIR)
+	@mkdir $(OBJ_DIR)
 
 clean: 
 	$(RM) $(OBJ)
@@ -83,7 +84,7 @@ fclean: clean
 	make fclean -C $(GET_NEXT_LINE_DIR)
 
 re: fclean all
-	echo "$(GREEN) Cleaned all and rebuild $(NAME),$(MLX_DIR) , $(FT_PRINTF_DIR) and $(GET_NEXT_LINE_DIR)!$(END_COLOR)!"
+	@echo "$(GREEN) Cleaned all and rebuild $(NAME), $(MLX_DIR) , $(FT_PRINTF_DIR) and $(GET_NEXT_LINE_DIR)!$(END_COLOR)!"
 
 .PHONY:		all clean fclean re
 

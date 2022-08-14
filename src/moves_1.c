@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 21:20:22 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/14 15:17:13 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/14 16:26:17 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,7 @@ void	move_up(t_prgm *vr)
 		return ;
 	put_move_up_to_window(vr);
 	if (vr->map[vr->pym - 1][vr->pxm] == 'C')
-	{
-		vr->collect_nb--;
-		vr->map[vr->pym - 1][vr->pxm] = '0';
-		if (vr->pxm == vr->fcxw / 64 && vr->pym - 1 == vr->fcyw / 64)
-			vr->b_animate_fc = 0;
-	}
+		collectible_handling_move_up(vr);
 	if (vr->map[vr->pym - 1][vr->pxm] == 'E' && vr->collect_nb != 0)
 		return ;
 	if ((vr->map[vr->pym - 1][vr->pxm] == 'E' && vr->collect_nb == 0)
@@ -53,12 +48,7 @@ void	move_down(t_prgm *vr)
 		return ;
 	put_move_down_to_window(vr);
 	if (vr->map[vr->pym + 1][vr->pxm] == 'C')
-	{
-		vr->collect_nb--;
-		vr->map[vr->pym + 1][vr->pxm] = '0';
-		if (vr->pxm == vr->fcxw / 64 && vr->pym + 1 == vr->fcyw / 64)
-			vr->b_animate_fc = 0;
-	}
+		collectible_handling_move_down(vr);
 	if (vr->map[vr->pym + 1][vr->pxm] == 'E' && vr->collect_nb != 0)
 		return ;
 	if ((vr->map[vr->pym + 1][vr->pxm] == 'E' && vr->collect_nb == 0)
@@ -85,12 +75,7 @@ void	move_right(t_prgm *vr)
 		return ;
 	put_move_right_to_window(vr);
 	if (vr->map[vr->pym][vr->pxm + 1] == 'C')
-	{
-		vr->collect_nb--;
-		vr->map[vr->pym][vr->pxm + 1] = '0';
-		if (vr->pxm + 1 == vr->fcxw / 64 && vr->pym == vr->fcyw / 64)
-			vr->b_animate_fc = 0;
-	}
+		collectible_handling_move_right(vr);
 	if (vr->map[vr->pym][vr->pxm + 1] == 'E' && vr->collect_nb != 0)
 		return ;
 	if ((vr->map[vr->pym][vr->pxm + 1] == 'E' && vr->collect_nb == 0)
@@ -117,12 +102,7 @@ void	move_left(t_prgm *vr)
 		return ;
 	put_move_left_to_window(vr);
 	if (vr->map[vr->pym][vr->pxm - 1] == 'C')
-	{
-		vr->collect_nb--;
-		vr->map[vr->pym][vr->pxm - 1] = '0';
-		if (vr->pxm - 1 == vr->fcxw / 64 && vr->pym == vr->fcyw / 64)
-			vr->b_animate_fc = 0;
-	}
+		collectible_handling_move_left(vr);
 	if (vr->map[vr->pym][vr->pxm - 1] == 'E' && vr->collect_nb != 0)
 		return ;
 	if ((vr->map[vr->pym][vr->pxm - 1] == 'E' && vr->collect_nb == 0)
