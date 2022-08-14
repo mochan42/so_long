@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   window.c                                           :+:      :+:    :+:   */
+/*   window_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 11:16:05 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/14 19:39:05 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/14 19:39:18 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ char	*choose_tile_path(char c)
 		tile_path = "./images/xpm/exit_v2_tile_64x64.xpm";
 	else if (c == 'C')
 		tile_path = "./images/xpm/treasure_chest_6_64x64.xpm";
-	// else if (c == 'V')
-	// 	tile_path = "./images/xpm/villain_run_v2_64x64_0.xpm";
+	else if (c == 'V')
+		tile_path = "./images/xpm/villain_run_v2_64x64_0.xpm";
 	return (tile_path);
 }
 
@@ -67,6 +67,7 @@ void	put_map_to_window(t_prgm *vr)
 		j++;
 		y = y + *vr->hei;
 	}
+	init_moves_display(vr);
 }
 
 // Added the initialization for height and width of each tile in the function 

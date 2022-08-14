@@ -6,14 +6,27 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 21:20:22 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/14 19:33:02 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/14 17:30:07 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
+void	init_moves_display(t_prgm *vr)
+{
+	char	*str;
+
+	str = i2a(vr->steps);
+	mlx_string_put(vr->mlx, vr->win, vr->mxw, vr->myw, vr->w, "MOVEMENTS :");
+	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->w, str);
+	if (str)
+		free(str);
+}
+
 void	move_up(t_prgm *vr)
 {
+	char	*str;
+
 	if (vr->map[vr->pym - 1][vr->pxm] == '1' ||
 	(vr->map[vr->pym - 1][vr->pxm] == 'E' && vr->collect_nb != 0))
 		return ;
@@ -29,12 +42,18 @@ void	move_up(t_prgm *vr)
 	vr->map[vr->pym][vr->pxm] = '0';
 	vr->pym -= 1;
 	vr->pyw -= 64;
+	put_black_patch_to_window(vr);
 	vr->steps += 1;
-	ft_printf("Movements : %d\n", vr->steps);
+	str = i2a(vr->steps);
+	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->w, str);
+	if (str)
+		free(str);
 }
 
 void	move_down(t_prgm *vr)
 {
+	char	*str;
+
 	if (vr->map[vr->pym + 1][vr->pxm] == '1' ||
 	(vr->map[vr->pym + 1][vr->pxm] == 'E' && vr->collect_nb != 0))
 		return ;
@@ -50,12 +69,18 @@ void	move_down(t_prgm *vr)
 	vr->map[vr->pym][vr->pxm] = '0';
 	vr->pym += 1;
 	vr->pyw += 64;
+	put_black_patch_to_window(vr);
 	vr->steps += 1;
-	ft_printf("Movements : %d\n", vr->steps);
+	str = i2a(vr->steps);
+	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->w, str);
+	if (str)
+		free(str);
 }
 
 void	move_right(t_prgm *vr)
 {
+	char	*str;
+
 	if (vr->map[vr->pym][vr->pxm + 1] == '1' ||
 	(vr->map[vr->pym][vr->pxm + 1] == 'E' && vr->collect_nb != 0))
 		return ;
@@ -71,12 +96,18 @@ void	move_right(t_prgm *vr)
 	vr->map[vr->pym][vr->pxm] = '0';
 	vr->pxm += 1;
 	vr->pxw += 64;
+	put_black_patch_to_window_bool_right(vr);
 	vr->steps += 1;
-	ft_printf("Movements : %d\n", vr->steps);
+	str = i2a(vr->steps);
+	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->w, str);
+	if (str)
+		free(str);
 }
 
 void	move_left(t_prgm *vr)
 {
+	char	*str;
+
 	if (vr->map[vr->pym][vr->pxm - 1] == '1' ||
 	(vr->map[vr->pym][vr->pxm - 1] == 'E' && vr->collect_nb != 0))
 		return ;
@@ -92,6 +123,10 @@ void	move_left(t_prgm *vr)
 	vr->map[vr->pym][vr->pxm] = '0';
 	vr->pxm -= 1;
 	vr->pxw -= 64;
+	put_black_patch_to_window_bool_left(vr);
 	vr->steps += 1;
-	ft_printf("Movements : %d\n", vr->steps);
+	str = i2a(vr->steps);
+	mlx_string_put(vr->mlx, vr->win, vr->mcxw, vr->myw, vr->w, str);
+	if (str)
+		free(str);
 }

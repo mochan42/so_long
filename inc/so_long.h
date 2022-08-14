@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/14 16:56:54 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/14 18:38:24 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,21 +89,21 @@ typedef struct s_prgm {
 /* ########################################################################## */
 /* FUNCTIONS */
 
-/* animation_1.c */
+/* animation_1_bonus.c */
 void	animate_1st_collectible(t_prgm *vr);
 int		ct_to_frame(int counter, int frames);
 void	find_1st_collectible(t_prgm *vr);
 void	ft_image_1st_collectible_mapping(t_prgm *vars, int n);
 void	ft_update_image_1st_collectible(t_prgm *vars, int n);
 
-/* animation_2.c */
+/* animation_2_bonus.c*/
 void	animate_player(t_prgm *vr);
 int		ct_to_frame_2(int counter, int frames);
 void	find_player(t_prgm *vr);
 void	ft_image_player_mapping(t_prgm *vars, int n);
 void	ft_update_image_player_rg(t_prgm *vars, int n);
 
-/* animation_3.c */
+/* animation_3_bonus.c */
 void	ft_image_player_mapping_lf(t_prgm *vars, int n);
 void	ft_update_image_player_lf(t_prgm *vars, int n);
 
@@ -128,6 +128,7 @@ void	check_ns_wall(t_prgm *vars);
 void	check_rectangle(t_prgm *vars);
 
 /* moves_1.c */
+void	init_moves_display(t_prgm *vr);
 void	move_down(t_prgm *vr);
 void	move_left(t_prgm *vr);
 void	move_right(t_prgm *vr);
@@ -164,22 +165,24 @@ int		get_len(int n);
 void	free_map(t_prgm *vars);
 int		ft_abs(int n);
 char	*i2a(int nbr);
+
+/* utils_bonus.c */
 void	init_animation(t_prgm *vr);
 
-/* villain_1.c */
+/* villain_1_bonus.c */
 void	animate_villain(t_prgm *vr);
 void	ft_image_villain_mapping_rg(t_prgm *vars, int n);
 void	ft_update_image_villain_rg_down(t_prgm *vars, int n);
 void	ft_update_image_villain_rg_up(t_prgm *vars, int n);
 void	villain_motion(t_prgm *vr, int n);
 
-/* villain_2.c */
+/* villain_2_bonus.c */
 int		ct_to_frame_3(int counter, int frames);
 int		ct_to_frame_4(int counter, int frames);
 void	init_villain_pos(t_prgm *vr);
 void	find_villain(t_prgm *vr);
 
-/* villain_3.c */
+/* villain_3_bonus.c */
 void	image_handling_after_villain_move_down(t_prgm *vr);
 void	image_handling_after_villain_move_up(t_prgm *vr);
 
