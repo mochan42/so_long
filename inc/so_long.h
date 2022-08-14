@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 15:37:09 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/14 02:37:32 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/14 14:44:56 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ typedef struct s_prgm {
 # define KEY_D 2
 # define SPEED 30
 # define SPEED_2 15
-# define SPEED_3 1
+# define SPEED_3 10
 # define SPEED_4 150
 
 /* ########################################################################## */

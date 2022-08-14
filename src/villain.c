@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 16:13:33 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/14 02:41:25 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/14 15:18:53 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,15 +128,14 @@ void	villain_motion(t_prgm *vr, int n)
 		floor_tile_path = "./images/xpm/floor_tile_64x64.xpm";
 		if (n == 1)
 		{
-			ft_update_image_villain_rg_down(vr, ct_to_frame_4(vr->counter, 2) + 1);
+			ft_update_image_villain_rg_down(vr, ct_to_frame_3(vr->counter, 5) + 1);
 		}
 		if (n == 2)
 		{
-			ft_update_image_villain_rg_up(vr, ct_to_frame_4(vr->counter, 2) + 1);
+			ft_update_image_villain_rg_up(vr, ct_to_frame_3(vr->counter, 5) + 1);
 		}
 	}
 }
-
 
 int	ct_to_frame_3(int counter, int frames)
 {
@@ -147,8 +146,9 @@ void	animate_villain(t_prgm *vr)
 {
 	if (vr->b_activate_vill==1 && vr->b_v_right == 1)
 	{
-		// usleep(100000);
 		vr->b_counter_vil_mot++;
 		villain_motion(vr, ct_to_frame_4(vr->b_counter_vil_mot++, 2) + 1);
+		if (vr->pxm == vr->vxm && vr->pym == vr->vym)
+			ft_close_window(vr);
 	}
 }
