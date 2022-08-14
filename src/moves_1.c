@@ -6,7 +6,7 @@
 /*   By: mochan <mochan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 21:20:22 by mochan            #+#    #+#             */
-/*   Updated: 2022/08/14 00:51:52 by mochan           ###   ########.fr       */
+/*   Updated: 2022/08/14 02:36:44 by mochan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void	move_up(t_prgm *vr)
 	if ((vr->map[vr->pym - 1][vr->pxm] == 'E' && vr->collect_nb == 0)
 		|| vr->map[vr->pym - 1][vr->pxm] == 'V')
 		ft_close_window(vr);
+	vr->map[vr->pym - 1][vr->pxm] = 'P';
+	vr->map[vr->pym][vr->pxm] = '0';
 	vr->pym -= 1;
 	vr->pyw -= 64;
 	put_black_patch_to_window(vr);
@@ -62,6 +64,8 @@ void	move_down(t_prgm *vr)
 	if ((vr->map[vr->pym + 1][vr->pxm] == 'E' && vr->collect_nb == 0)
 		|| vr->map[vr->pym + 1][vr->pxm] == 'V')
 		ft_close_window(vr);
+	vr->map[vr->pym + 1][vr->pxm] = 'P';
+	vr->map[vr->pym][vr->pxm] = '0';
 	vr->pym += 1;
 	vr->pyw += 64;
 	put_black_patch_to_window(vr);
@@ -92,6 +96,8 @@ void	move_right(t_prgm *vr)
 	if ((vr->map[vr->pym][vr->pxm + 1] == 'E' && vr->collect_nb == 0)
 		|| vr->map[vr->pym][vr->pxm + 1] == 'V')
 		ft_close_window(vr);
+	vr->map[vr->pym][vr->pxm + 1] = 'P';
+	vr->map[vr->pym][vr->pxm] = '0';
 	vr->pxm += 1;
 	vr->pxw += 64;
 	put_black_patch_to_window_bool_right(vr);
@@ -122,6 +128,8 @@ void	move_left(t_prgm *vr)
 	if ((vr->map[vr->pym][vr->pxm - 1] == 'E' && vr->collect_nb == 0)
 		|| vr->map[vr->pym][vr->pxm - 1] == 'V')
 		ft_close_window(vr);
+	vr->map[vr->pym][vr->pxm - 1] = 'P';
+	vr->map[vr->pym][vr->pxm] = '0';
 	vr->pxm -= 1;
 	vr->pxw -= 64;
 	put_black_patch_to_window_bool_left(vr);
