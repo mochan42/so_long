@@ -13,10 +13,10 @@ Enter into the directory `push_swap` (or type in the name of the folder you crea
 `cd so_long`
 
 Run the Makefile:<br>
-`make` for mandatory part
+`make` for mandatory part<br>
 `make bonus` for mandatory bonus part
 
 The arguments that the so_long program (mandatory or bonus part) is the path to the map to load the game.
-Maps are stored in the folder `maps`.
-To run the game :
+Maps are stored in the folder `maps`. <br>
+To run the game :<br>
 `./so_long ./maps/map_1.ber`
