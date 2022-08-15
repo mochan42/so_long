@@ -4,6 +4,12 @@
 * Passed with 125% (including all 3 bonuses) on 14th Aug 2022.<br>
 
 
+
+https://user-images.githubusercontent.com/107719618/184662064-0c35cca1-c255-4d5b-ad7f-223366b66f8d.mov
+
+
+
+
 ## Use (with Mac OS)
 
 Clone the repository in your terminal and create a folder named push_swap (or the name you prefer):<br>
