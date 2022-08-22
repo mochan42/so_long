@@ -2,6 +2,10 @@
 * 42 Core Curriculum - Level 2
 * Level 2 in the Holy Graph<br>
 * Passed with 125% (including all 3 bonuses) on 14th Aug 2022.<br>
+    - 1st bonus : make the player lose when they touch an enemy patrol,
+    - 2nd bonus : some sort of sprite animation : 1 collectible, the player and the enemy,
+    - 3rd bonus : counter of movements displayed on the window instead of the terminal.
+ 
 
 
 
